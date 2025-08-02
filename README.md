@@ -1,165 +1,195 @@
-# INTEGNITY - Bootstrap 5 Implementation
+# INTEGNITY - Bootstrap 5 + GSAP Professional Implementation
 
-Bu loyiha sizning rasmingiz va Figma CSS specifications asosida **Bootstrap 5** framework bilan yaratilgan to'liq responsive INTEGNITY web sayt hisoblanadi.
+Bu loyiha sizning professional rasmingiz asosida **Bootstrap 5** va **GSAP** bilan yaratilgan premium INTEGNITY influencer agency web sayt hisoblanadi.
 
-## 🎯 Bootstrap 5 Implementation
+## 🎯 Rasm Asosida Implementation
 
-### ✅ Framework Features
-- **Bootstrap 5.3.2** - Latest stable version
-- **Responsive Grid System** - Container-fluid, rows, columns
-- **Utility Classes** - Spacing, typography, flexbox
-- **Components** - Navbar, buttons, collapse
-- **JavaScript** - Bootstrap bundle with Popper.js
+### ✅ Rasmdan Olingan Elementlar
+- **Classical Statue**: O'ng tomonda joylashgan professional statue figure
+- **Dark Gradient Background**: Sophisticated gradient overlay
+- **Navigation Layout**: INTEGNITY brand, centered menu, START A PROJECT CTA
+- **Three Badges**: Strategy-first, Independent since 2013, #1 Ranked
+- **Large Title**: INTEGNITY text overlay on statue
+- **Premium Aesthetic**: Professional agency branding
 
-### 🎨 Figma Specifications (100% Implemented)
-
+### 🎨 Visual Specifications
 ```css
-/* INTEGNITY Brand */
-font-family: Plus Jakarta Sans ✅
-font-size: 32px ✅
-font-weight: 800 ✅
-color: white ✅
+/* Background Gradient (from image) */
+--bg-gradient: linear-gradient(135deg, 
+    rgba(26, 31, 38, 0.95) 0%, 
+    rgba(45, 55, 65, 0.9) 30%, 
+    rgba(58, 74, 92, 0.85) 60%, 
+    rgba(45, 55, 65, 0.9) 100%);
 
-/* Navigation Items */
-font-family: Plus Jakarta Sans ✅
-font-size: 16px ✅
-font-weight: 800 ✅
-color: white ✅
-
-/* START A PROJECT Button */
-font-family: Plus Jakarta Sans ✅
-font-size: 20px ✅
-font-weight: 800 ✅
-color: white ✅
-
-/* Hero Badges */
-font-family: Plus Jakarta Sans ✅
-font-size: 16px ✅
-font-weight: 800 ✅
-text-transform: uppercase ✅
-color: white ✅
+/* Typography (Plus Jakarta Sans) */
+--fs-brand: 32px;
+--fs-cta: 20px;
+--fs-nav: 16px;
+--fs-hero-title: clamp(4rem, 12vw, 12rem);
 ```
 
-### 🎨 Color Palette (From Image)
-```css
-:root {
-    --color-white: #FFFFFF;
-    --color-gray-light: #CA9C6D;
-    --color-gray-dark: #D9D9D9;
-    --bg-gradient: linear-gradient(135deg, #3a4a5c 0%, #2d3741 50%, #1a1f26 100%);
-}
+## 🚀 Technology Stack
+
+### Framework & Libraries
+- **Bootstrap 5.3.2** - Responsive framework
+- **GSAP 3.12.2** - Professional animations
+- **ScrollTrigger** - Scroll-based animations
+- **TextPlugin** - Text animations
+- **Plus Jakarta Sans** - Google Fonts typography
+
+### GSAP Features Used
+```javascript
+// Loading animations
+gsap.to(progressBar, { width: '100%', duration: 2 });
+
+// Hero entrance
+gsap.fromTo(statue, { scale: 1.1, opacity: 0 }, { scale: 1, opacity: 0.8 });
+
+// Letter-by-letter title animation
+titleLetters.forEach((letter, index) => {
+    gsap.to(letter, {
+        opacity: 1, y: 0, rotationX: 0,
+        delay: 2 + (index * 0.1)
+    });
+});
+
+// Parallax scrolling
+gsap.to(statue, {
+    y: -100,
+    scrollTrigger: { trigger: '.hero-section', scrub: 1 }
+});
 ```
 
 ## 📂 File Structure
 
 ```
-├── index.html          # Bootstrap 5 HTML structure
-├── style.css           # Custom CSS with Bootstrap integration
-├── script.js           # Enhanced JavaScript with Bootstrap
+├── index.html          # Bootstrap 5 + GSAP structure
+├── style.css           # Professional CSS with animations
+├── script.js           # GSAP enhanced JavaScript
+├── statue.jpg          # Classical statue image (add your image)
 └── README.md           # This documentation
 ```
 
-## 🚀 Bootstrap 5 Components Used
+## 🎬 GSAP Animations
+
+### Loading Sequence
+1. **Progress Bar** - Smooth width animation
+2. **Loading Screen** - Fade out transition
+3. **Hero Entrance** - Statue and overlay fade in
+4. **Navigation** - Slide down with stagger
+5. **Badges** - Scale up with back.out easing
+6. **Title Letters** - Individual letter animations
+
+### Interactive Animations
+```javascript
+// Hover effects
+gsap.to(element, { y: -3, scale: 1.05, duration: 0.3 });
+
+// Click animations
+gsap.to(element, { scale: 0.95, yoyo: true, repeat: 1 });
+
+// Parallax effects
+gsap.to(statue, { y: -100, scrollTrigger: { scrub: 1 } });
+```
+
+### Scroll Animations
+- **Statue Parallax** - Moves up on scroll
+- **Title Fade** - Fades out with scroll
+- **Scroll Indicator** - Disappears on scroll
+- **Navbar Background** - Appears on scroll
+
+## 📱 Bootstrap 5 Responsive System
+
+### Grid Implementation
+```html
+<div class="container-fluid px-4 px-lg-5">
+    <div class="row justify-content-start mb-5">
+        <div class="col-12">
+            <div class="hero-badges">
+```
+
+### Utility Classes Used
+- **Layout**: `d-flex`, `justify-content-center`, `align-items-center`
+- **Spacing**: `px-4`, `px-lg-5`, `py-4`, `mb-5`, `gap-4`
+- **Display**: `d-none`, `d-lg-block`, `d-flex`
+- **Responsive**: `container-fluid`, `row`, `col-12`
+
+### Breakpoints
+```css
+/* Bootstrap 5 Breakpoints */
+XL (≥1400px): Full desktop with statue 50% width
+LG (≥992px): Large desktop, navbar-expand-lg
+MD (≥768px): Tablet, statue 70% width, opacity 0.6
+SM (≥576px): Small tablet
+XS (<576px): Mobile, statue 100% width, opacity 0.3
+```
+
+## ⚡ Performance Features
+
+### GSAP Optimizations
+- **Hardware Acceleration** - transform3d usage
+- **Debounced Events** - Resize and scroll optimization
+- **Intersection Observer** - Efficient scroll detection
+- **Conditional Animations** - Mobile vs desktop
+
+### Loading Optimizations
+```javascript
+// Font preloading
+const fontLink = document.createElement('link');
+fontLink.rel = 'preload';
+fontLink.href = 'Google Fonts URL';
+
+// Image preloading
+const img = new Image();
+img.src = 'statue.jpg';
+```
+
+### Performance Monitoring
+```javascript
+// Load time tracking
+const perfData = performance.getEntriesByType('navigation')[0];
+console.log('Page Load Time:', perfData.loadEventEnd - perfData.fetchStart);
+```
+
+## 🎯 Interactive Features
 
 ### Navigation
+- **Hover Effects** - GSAP powered smooth transitions
+- **Active States** - Dynamic class management
+- **Mobile Menu** - Bootstrap collapse with GSAP animations
+- **Scroll Effects** - Navbar background on scroll
+
+### CTA Button
+```javascript
+// Enhanced hover animation
+ctaButton.addEventListener('mouseenter', function() {
+    gsap.to(this, { scale: 1.05, y: -2, duration: 0.3 });
+    gsap.to(arrow, { x: 3, duration: 0.3 });
+});
+```
+
+### Hero Badges
+- **Hover Scale** - Smooth scale and lift effects
+- **Shimmer Effect** - CSS pseudo-element animation
+- **Click Feedback** - Scale down animation
+
+## 🔧 Setup Instructions
+
+### 1. Add Statue Image
+```bash
+# Add your statue image as 'statue.jpg' in the root directory
+# Recommended size: 1920x1080 or higher
+# Format: JPG or WebP for best performance
+```
+
+### 2. CDN Links (Already Included)
 ```html
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand">INTEGNITY</a>
-        <button class="navbar-toggler" data-bs-toggle="collapse">
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav">
-```
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
-### Grid System
-```html
-<div class="container-fluid px-5">
-    <div class="row justify-content-center">
-        <div class="col-12">
-```
-
-### Utility Classes
-```html
-<div class="d-flex justify-content-center flex-wrap gap-4">
-<div class="d-none d-lg-block">
-<div class="py-4 px-5 mb-5">
-```
-
-## 📱 Responsive Breakpoints (Bootstrap 5)
-
-### Extra Large (≥1400px)
-```css
-@media (min-width: 1400px) {
-    /* Bootstrap xxl breakpoint */
-}
-```
-
-### Large (≥992px)
-```css
-@media (min-width: 992px) {
-    /* Bootstrap lg breakpoint */
-    .d-lg-block { display: block !important; }
-}
-```
-
-### Medium (≥768px)
-```css
-@media (min-width: 768px) {
-    /* Bootstrap md breakpoint */
-}
-```
-
-### Small (≥576px)
-```css
-@media (min-width: 576px) {
-    /* Bootstrap sm breakpoint */
-}
-```
-
-### Extra Small (<576px)
-```css
-@media (max-width: 575.98px) {
-    /* Bootstrap xs (default) */
-}
-```
-
-## ⚡ Bootstrap 5 Features
-
-### Responsive Navigation
-- **Desktop**: Full horizontal menu
-- **Mobile**: Collapsible hamburger menu
-- **Bootstrap Classes**: `navbar-expand-lg`, `navbar-toggler`, `collapse`
-
-### Grid System
-- **Container**: `container-fluid` for full width
-- **Responsive**: `col-12`, `justify-content-center`
-- **Spacing**: `px-5`, `py-4`, `mb-5`, `gap-4`
-
-### Utility Classes
-- **Display**: `d-flex`, `d-none`, `d-lg-block`
-- **Flexbox**: `justify-content-center`, `align-items-center`
-- **Text**: `text-uppercase`, `text-center`
-- **Spacing**: `px-*`, `py-*`, `mb-*`, `gap-*`
-
-### Components
-- **Navbar**: Responsive navigation with collapse
-- **Buttons**: Custom styled with Bootstrap base
-- **Cards**: Hero badges with Bootstrap styling
-
-## 🔧 Installation & Setup
-
-### 1. CDN Links (Already Included)
-```html
-<!-- Bootstrap 5 CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Bootstrap 5 JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-```
-
-### 2. Google Fonts
-```html
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 ```
 
 ### 3. Run the Website
@@ -170,38 +200,40 @@ python -m http.server 8000
 # Or with Node.js
 npx serve .
 
-# Or open index.html directly in browser
+# Or open index.html directly
 ```
 
-## 🎨 Custom CSS Integration
+## 🎨 Customization
 
-### Bootstrap Override
+### Colors
 ```css
-/* Override Bootstrap variables */
 :root {
-    --bs-primary: #ffffff;
-    --bs-dark: #2d3741;
-}
-
-/* Custom component styles */
-.navbar {
-    background: transparent !important;
-}
-
-.btn-cta {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 2px solid rgba(255, 255, 255, 0.15) !important;
+    --color-white: #FFFFFF;
+    --color-dark: #1a1f26;
+    --color-accent: rgba(255, 255, 255, 0.1);
+    --bg-gradient: /* Your custom gradient */;
 }
 ```
 
-### Responsive Utilities
+### Animations
+```javascript
+// Customize animation timings
+gsap.to(element, {
+    duration: 0.8,        // Animation duration
+    ease: 'power2.out',   // Easing function
+    delay: 0.5           // Delay before start
+});
+```
+
+### Responsive Behavior
 ```css
-/* Mobile-first approach */
+/* Custom breakpoints */
 @media (max-width: 991.98px) {
-    .navbar-collapse {
-        background: rgba(45, 55, 65, 0.98);
-        backdrop-filter: blur(20px);
-    }
+    .statue-container { width: 70%; opacity: 0.6; }
+}
+
+@media (max-width: 767.98px) {
+    .statue-container { width: 100%; opacity: 0.3; }
 }
 ```
 
@@ -212,94 +244,69 @@ npx serve .
 - **Safari** 12+ ✅
 - **Edge** 79+ ✅
 - **Mobile Browsers** ✅
-- **Bootstrap 5** compatible browsers ✅
+- **GSAP Support** ✅
 
-## ♿ Accessibility (Bootstrap 5 Enhanced)
+## ♿ Accessibility
 
-### Built-in Bootstrap Accessibility
+### GSAP Accessibility
+```javascript
+// Respect reduced motion preference
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    gsap.set('*', { duration: 0.01 });
+}
+```
+
+### Bootstrap Accessibility
 - **ARIA attributes** - Automatic on components
 - **Keyboard navigation** - Tab, Enter, Escape support
-- **Screen reader** - Semantic HTML structure
 - **Focus management** - Visible focus indicators
+- **Screen reader** - Semantic HTML structure
 
-### Custom Enhancements
+## 🎯 GSAP vs CSS Animations
+
+| Feature | GSAP | CSS |
+|---------|------|-----|
+| Performance | ✅ Hardware accelerated | ⚠️ Limited |
+| Control | ✅ Full programmatic | ❌ Limited |
+| Easing | ✅ Advanced easing | ⚠️ Basic |
+| Timeline | ✅ Complex sequences | ❌ No timeline |
+| ScrollTrigger | ✅ Built-in | ❌ Manual |
+| File Size | 📦 ~30KB | 📦 0KB |
+
+## 🚀 Advanced Features
+
+### Mouse Parallax (Desktop)
 ```javascript
-// Keyboard navigation
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        // Close mobile menu
+// Subtle mouse movement effects
+document.addEventListener('mousemove', function(e) {
+    const mouseX = (e.clientX - window.innerWidth / 2) / window.innerWidth;
+    gsap.to(statue, { x: mouseX * 20, duration: 1 });
+});
+```
+
+### Touch Gestures (Mobile)
+```javascript
+// Swipe detection
+document.addEventListener('touchend', function(e) {
+    const deltaX = touchEndX - touchStartX;
+    if (Math.abs(deltaX) > 50) {
+        // Handle swipe
     }
 });
-
-// ARIA enhancements
-navLinks.forEach(link => {
-    link.setAttribute('role', 'menuitem');
-    link.setAttribute('tabindex', '0');
-});
 ```
 
-## 🚀 Performance Optimizations
-
-### Bootstrap 5 Benefits
-- **Smaller bundle size** - No jQuery dependency
-- **Modern CSS** - CSS custom properties
-- **Tree shaking** - Import only needed components
-- **CDN delivery** - Fast loading from Bootstrap CDN
-
-### Custom Optimizations
-```javascript
-// Font preloading
-const fontLink = document.createElement('link');
-fontLink.rel = 'preload';
-fontLink.href = 'Google Fonts URL';
-
-// Intersection Observer
-const observer = new IntersectionObserver(entries => {
-    // Animate elements on scroll
-});
-```
-
-## 🎯 Bootstrap vs Custom Comparison
-
-| Feature | Bootstrap 5 | Custom CSS |
-|---------|-------------|------------|
-| Grid System | ✅ Built-in | ❌ Manual |
-| Responsive | ✅ Automatic | ❌ Manual |
-| Components | ✅ Pre-built | ❌ Custom |
-| JavaScript | ✅ Included | ❌ Manual |
-| File Size | 📦 ~25KB gzipped | 📦 Variable |
-| Customization | 🎨 Variables | 🎨 Full control |
-
-## 📋 Bootstrap 5 Classes Used
-
-### Layout
-- `container-fluid`, `row`, `col-12`
-- `d-flex`, `justify-content-center`, `align-items-center`
-- `flex-wrap`, `flex-column`, `gap-4`
-
-### Spacing
-- `px-5`, `py-4`, `mb-5`, `mt-3`
-- `p-0`, `m-0`, `mx-auto`
-
-### Display
-- `d-none`, `d-lg-block`, `d-flex`
-- `d-inline-flex`, `d-md-none`
-
-### Text
-- `text-center`, `text-uppercase`
-- `text-white`, `text-decoration-none`
-
-### Components
-- `navbar`, `navbar-expand-lg`, `navbar-dark`
-- `navbar-brand`, `navbar-toggler`, `navbar-nav`
-- `nav-link`, `btn`, `collapse`
+### Loading Screen
+- **Progress Animation** - Smooth progress bar
+- **Logo Animation** - Brand entrance
+- **Transition** - Fade to main content
 
 ---
 
-**Framework**: Bootstrap 5.3.2  
-**Font**: Plus Jakarta Sans (Google Fonts)  
-**Responsive**: Mobile-first approach  
+**Framework**: Bootstrap 5.3.2 + GSAP 3.12.2  
+**Design**: Based on professional agency image  
+**Performance**: Optimized for all devices  
+**Animations**: Professional GSAP implementation  
 **Yaratuvchi**: Codegen AI  
 **Sana**: 2025  
-**Versiya**: 5.0 (Bootstrap Perfect)
+**Versiya**: 6.0 (Bootstrap + GSAP Perfect)
 
