@@ -299,6 +299,7 @@ function initializeMobileMenu() {
             bsCollapse.hide();
         }
     });
+    });
     
     // Handle window resize
     window.addEventListener('resize', function() {
@@ -730,4 +731,3 @@ if ('performance' in window) {
 }
 
 console.log('🎯 INTEGNITY - Script loaded successfully');
-
