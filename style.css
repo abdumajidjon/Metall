@@ -130,6 +130,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    padding-top: 120px; /* Fixed navbar uchun joy */
 }
 
 /* Hero Background */
@@ -176,7 +177,11 @@ body {
     background: transparent !important;
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
-    position: relative;
+    position: fixed; /* Ekranning tepasida qo'yish uchun */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: var(--z-navigation);
     transition: all var(--transition-normal);
 }
