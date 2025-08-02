@@ -1,94 +1,90 @@
-# INTEGNITY - Hero Section Responsive Website
+# INTEGNITY - Responsive Website
 
-Bu loyiha INTEGNITY influencer marketing agentligi uchun professional hero section bilan to'liq responsive web sayt hisoblanadi.
+Bu loyiha sizning HTML kodingiz asosida yaratilgan to'liq responsive INTEGNITY web sayt hisoblanadi.
 
-## 🎨 Dizayn Xususiyatlari
+## 🎯 Asosiy Xususiyatlar
 
-### Pixel-Perfect Implementation
-- Rasmdan to'liq aniq ko'chirilgan dizayn
-- Professional gradient background (3a4a5c → 2d3741 → 1a1f26)
-- Statue silhouette effekti
-- Realistic lighting va shadow effektlar
+### ✅ Sizning Kodingizga Mos
+- Aynan bir xil HTML struktura
+- Bir xil class nomlari
+- Bir xil element tartibini saqlash
+- Faqat responsive qo'shimchalar
 
 ### 📱 To'liq Responsive Dizayn
 
-#### Desktop (1400px+)
-- Katta statue figure (500x700px)
+#### 🖥️ Desktop (1400px+)
+- To'liq navbar ko'rinadi
 - Keng spacing va padding
-- Full navigation menu
-- Parallax effektlar
+- Hover effektlar
 
-#### Large Desktop (1025px-1399px)
-- O'rtacha statue figure (350x550px)
+#### 💻 Large Desktop (1024px-1399px)
 - Optimallashtirilgan spacing
+- Barcha elementlar ko'rinadi
 
-#### Tablet (769px-1024px)
-- Kichikroq statue figure (300x450px)
-- Moslashtirilgan typography
-- Touch-friendly navigation
+#### 📱 Tablet (768px-1023px)
+- Kichikroq font sizes
+- Moslashtirilgan gaps
 
-#### Mobile Portrait (≤768px)
-- Statue figure yashirilgan
-- Vertikal badge layout
+#### 📱 Mobile (≤767px)
 - Hamburger menu
+- Vertikal badge layout
 - Markazlashtirilgan content
 
-#### Mobile Landscape
-- Gorizontal badge layout
-- Optimallashtirilgan height
-
-#### Small Mobile (≤480px)
-- Minimal padding
+#### 📱 Small Mobile (≤480px)
+- Compact layout
 - Kichik font sizes
-- Compact navigation
 
-#### Very Small Mobile (≤360px)
-- Ultra-compact layout
+#### 📱 Very Small Mobile (≤360px)
+- Ultra-compact design
 - Minimal spacing
-
-## ⚡ Texnologiyalar
-
-- **HTML5** - Semantic markup
-- **CSS3** - Modern features
-  - Flexbox va Grid layout
-  - CSS Custom Properties
-  - Advanced animations
-  - Backdrop filters
-- **Vanilla JavaScript** - Framework-free
-  - ES6+ features
-  - Performance optimized
-  - Accessibility support
-
-## 🚀 Xususiyatlar
-
-### Interactive Elements
-- **Responsive Navigation** - Mobile hamburger menu
-- **Parallax Effects** - Scroll-based animations
-- **Mouse Tracking** - Statue follows cursor
-- **Hover Effects** - Badge va button interactions
-- **Smooth Scrolling** - Butun sayt bo'ylab
-
-### Performance Optimizations
-- **Debounced Events** - Scroll va resize
-- **Hardware Acceleration** - CSS transforms
-- **Lazy Loading** - Images va animations
-- **Reduced Motion** - Accessibility support
-
-### Accessibility Features
-- **Keyboard Navigation** - Tab support
-- **Focus Indicators** - Visual feedback
-- **Screen Reader** - Semantic HTML
-- **High Contrast** - Support for preferences
-- **Reduced Motion** - Respects user preferences
 
 ## 📂 Fayl Tuzilishi
 
 ```
-├── index.html          # Asosiy HTML struktura
-├── styles.css          # Responsive CSS stillari
+├── index.html          # Sizning HTML kodingiz (responsive qo'shimchalar bilan)
+├── vars.css            # CSS variables
+├── style.css           # Responsive CSS stillari
 ├── script.js           # JavaScript funksionalligi
-└── README.md           # Loyiha dokumentatsiyasi
+├── integnity1.svg      # INTEGNITY logo SVG
+├── arrow-10.svg        # Arrow icon SVG
+└── README.md           # Bu fayl
 ```
+
+## 🎨 Dizayn Elementlari
+
+### Navigation Bar
+- **Brand**: INTEGNITY logo chap tomonda
+- **Menu**: HOME, ABOUT, WORK, INSIGHTS, SERVICES, CONTACT
+- **CTA**: START A PROJECT tugmasi o'ng tomonda
+- **Mobile**: Hamburger menu
+
+### Hero Content
+- **Badges**: 3 ta glass morphism badge
+  - Strategy-first Influencer Agency
+  - Independent since 2013
+  - #1 Ranked Emerce100
+- **Title**: INTEGNITY SVG logo
+
+## ⚡ Texnologiyalar
+
+- **HTML5** - Sizning strukturangiz
+- **CSS3** - Modern responsive features
+- **Vanilla JavaScript** - Mobile menu functionality
+- **SVG** - Scalable graphics
+
+## 🚀 Xususiyatlar
+
+### Responsive Features
+- **Mobile Menu** - Hamburger toggle
+- **Flexible Layout** - CSS Grid va Flexbox
+- **Scalable Typography** - clamp() functions
+- **Touch Friendly** - Mobile optimized
+
+### Interactive Elements
+- **Hover Effects** - Navigation va buttons
+- **Mobile Menu** - Smooth animations
+- **Keyboard Navigation** - Accessibility
+- **Touch Gestures** - Swipe detection
 
 ## 🎯 Responsive Breakpoints
 
@@ -99,41 +95,54 @@ Bu loyiha INTEGNITY influencer marketing agentligi uchun professional hero secti
 /* Small Mobile */
 @media (max-width: 480px) { ... }
 
-/* Mobile Portrait */
-@media (max-width: 768px) { ... }
-
-/* Mobile Landscape */
-@media (max-width: 768px) and (orientation: landscape) { ... }
+/* Mobile */
+@media (max-width: 767px) { ... }
 
 /* Tablet */
-@media (max-width: 1024px) { ... }
+@media (max-width: 1023px) and (min-width: 768px) { ... }
 
 /* Desktop */
-@media (max-width: 1399px) and (min-width: 1025px) { ... }
+@media (max-width: 1399px) and (min-width: 1024px) { ... }
 
 /* Large Desktop */
 @media (min-width: 1400px) { ... }
 ```
 
-## 🌟 Animatsiyalar
-
-- **Statue Float** - 6s infinite floating
-- **Light Pulse** - 4s breathing effect
-- **Fade In Up** - Element entrance
-- **Parallax** - Scroll-based movement
-- **Hover Effects** - Interactive feedback
-
 ## 🔧 Ishga Tushirish
 
-1. Fayllarni yuklab oling
-2. `index.html` ni brauzerda oching
-3. Yoki web serverda ishga tushiring
+1. Barcha fayllarni bir papkaga joylashtiring
+2. `index.html` faylini brauzerda oching
+3. Yoki web serverda ishga tushiring:
 
 ```bash
-# Simple HTTP server
+# Python server
 python -m http.server 8000
-# yoki
+
+# Node.js server
 npx serve .
+
+# PHP server
+php -S localhost:8000
+```
+
+## 📱 Test Qilingan Qurilmalar
+
+- **Desktop**: Chrome, Firefox, Safari, Edge
+- **Tablet**: iPad, Android tablets
+- **Mobile**: iPhone, Android phones
+- **Orientations**: Portrait va Landscape
+
+## 🎨 CSS Variables
+
+Barcha ranglar, o'lchamlar va boshqa qiymatlar `vars.css` faylida CSS variables sifatida saqlangan:
+
+```css
+:root {
+  --primary-bg: linear-gradient(135deg, #3a4a5c 0%, #2d3741 50%, #1a1f26 100%);
+  --text-white: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  /* ... */
+}
 ```
 
 ## 🌐 Browser Qo'llab-quvvatlash
@@ -144,45 +153,18 @@ npx serve .
 - **Edge** 79+
 - **Mobile Browsers** - iOS Safari, Chrome Mobile
 
-## 📱 Test Qilingan Qurilmalar
+## ♿ Accessibility
 
-- **Desktop**: 1920x1080, 2560x1440
-- **Tablet**: iPad, Android tablets
-- **Mobile**: iPhone, Android phones
-- **Orientations**: Portrait va Landscape
-
-## 🎨 Dizayn Elementlari
-
-### Navigation
-- Fixed position navbar
-- Scroll-based background change
-- Mobile hamburger menu
-- Smooth hover effects
-
-### Hero Section
-- Gradient background
-- Statue silhouette effect
-- Three information badges
-- Large typography title
-- Interactive lighting
-
-### Typography
-- **Font**: Inter (Google Fonts)
-- **Weights**: 300-900
-- **Responsive**: clamp() functions
-- **Accessibility**: High contrast support
-
-### Colors
-```css
-Primary Background: linear-gradient(135deg, #3a4a5c 0%, #2d3741 50%, #1a1f26 100%)
-Text: white
-Accents: rgba(255, 255, 255, 0.1-0.2)
-```
+- **Keyboard Navigation** - Tab support
+- **Focus Indicators** - Visual feedback
+- **Screen Reader** - Semantic HTML
+- **Reduced Motion** - Respects user preferences
+- **High Contrast** - Support for accessibility modes
 
 ---
 
+**Maqsad**: Sizning HTML kodingizni saqlab, to'liq responsive qilish  
 **Yaratuvchi**: Codegen AI  
 **Sana**: 2025  
-**Versiya**: 2.0  
-**Maqsad**: Pixel-perfect responsive implementation
+**Versiya**: 3.0
 

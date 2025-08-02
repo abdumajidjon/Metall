@@ -1,329 +1,144 @@
-// Mobile Navigation Toggle
-const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.getElementById('nav-menu');
-
-if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
+// Mobile Menu Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navList = document.querySelector('.nav-list');
+    
+    if (mobileMenuToggle && navList) {
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.classList.toggle('active');
+            navList.classList.toggle('active');
         });
-    });
-}
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        
+        // Close mobile menu when clicking on navigation items
+        const navItems = document.querySelectorAll('.nav-list > div');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                navList.classList.remove('active');
             });
-        }
-    });
-});
-
-// Navbar background on scroll
-let lastScrollTop = 0;
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-    
-    lastScrollTop = scrollTop;
-});
-
-// Parallax effect for hero elements
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.5;
-    
-    const statue = document.querySelector('.statue-figure');
-    const lightEffects = document.querySelector('.light-effects');
-    
-    if (statue) {
-        statue.style.transform = `translateY(calc(-50% + ${rate * 0.3}px)) scale(${1 + scrolled * 0.0001})`;
-    }
-    
-    if (lightEffects) {
-        lightEffects.style.transform = `translateY(${rate * 0.2}px)`;
-    }
-});
-
-// Interactive mouse movement effect
-let mouseX = 0;
-let mouseY = 0;
-let targetX = 0;
-let targetY = 0;
-
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
-
-function animateStatue() {
-    const statue = document.querySelector('.statue-figure');
-    if (statue) {
-        const rect = statue.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        
-        targetX = (mouseX - centerX) * 0.02;
-        targetY = (mouseY - centerY) * 0.02;
-        
-        // Smooth animation
-        const currentTransform = statue.style.transform || '';
-        const baseTransform = currentTransform.includes('translateY') ? 
-            currentTransform : 'translateY(-50%)';
-        
-        statue.style.transform = `${baseTransform} translate(${targetX}px, ${targetY}px)`;
-    }
-    
-    requestAnimationFrame(animateStatue);
-}
-
-// Start statue animation
-animateStatue();
-
-// Badge hover effects
-document.querySelectorAll('.badge').forEach(badge => {
-    badge.addEventListener('mouseenter', () => {
-        badge.style.transform = 'translateY(-3px) scale(1.02)';
-        badge.style.background = 'rgba(255, 255, 255, 0.18)';
-    });
-    
-    badge.addEventListener('mouseleave', () => {
-        badge.style.transform = 'translateY(0) scale(1)';
-        badge.style.background = 'rgba(255, 255, 255, 0.1)';
-    });
-});
-
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-        }
-    });
-}, observerOptions);
-
-// Observe elements for animation
-document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.badge, .hero-title, .content-section');
-    animateElements.forEach(el => observer.observe(el));
-});
-
-// Enhanced lighting effects based on mouse position
-document.addEventListener('mousemove', (e) => {
-    const lightEffects = document.querySelector('.light-effects');
-    if (lightEffects) {
-        const x = (e.clientX / window.innerWidth) * 100;
-        const y = (e.clientY / window.innerHeight) * 100;
-        
-        lightEffects.style.background = `
-            radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.15) 0%, transparent 50%),
-            radial-gradient(circle at ${100-x}% ${100-y}%, rgba(255,255,255,0.08) 0%, transparent 40%)
-        `;
-    }
-});
-
-// Keyboard navigation support
-document.addEventListener('keydown', (e) => {
-    // ESC key closes mobile menu
-    if (e.key === 'Escape' && navMenu) {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-    }
-    
-    // Enter key on badges
-    if (e.key === 'Enter' && e.target.classList.contains('badge')) {
-        e.target.click();
-    }
-});
-
-// Touch gestures for mobile
-let touchStartX = 0;
-let touchStartY = 0;
-
-document.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-}, { passive: true });
-
-document.addEventListener('touchend', (e) => {
-    const touchEndX = e.changedTouches[0].clientX;
-    const touchEndY = e.changedTouches[0].clientY;
-    
-    const deltaX = touchEndX - touchStartX;
-    const deltaY = touchEndY - touchStartY;
-    
-    // Swipe detection
-    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
-        if (deltaX > 0) {
-            console.log('Swipe right detected');
-        } else {
-            console.log('Swipe left detected');
-        }
-    }
-}, { passive: true });
-
-// Performance optimization: Debounce scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Apply debounce to scroll events
-const debouncedScrollHandler = debounce(() => {
-    const scrollPosition = window.scrollY;
-    
-    // Update navbar
-    if (scrollPosition > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-    
-    // Parallax effects
-    const scrolled = scrollPosition;
-    const rate = scrolled * -0.5;
-    
-    const statue = document.querySelector('.statue-figure');
-    if (statue && window.innerWidth > 768) {
-        statue.style.transform = `translateY(calc(-50% + ${rate * 0.3}px))`;
-    }
-}, 16); // ~60fps
-
-window.addEventListener('scroll', debouncedScrollHandler, { passive: true });
-
-// Resize handler for responsive adjustments
-window.addEventListener('resize', debounce(() => {
-    // Reset transforms on resize
-    const statue = document.querySelector('.statue-figure');
-    if (statue) {
-        if (window.innerWidth <= 768) {
-            statue.style.transform = '';
-        } else {
-            statue.style.transform = 'translateY(-50%)';
-        }
-    }
-}, 250));
-
-// Loading screen effect
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-    
-    // Animate elements on load
-    setTimeout(() => {
-        document.querySelectorAll('.badge').forEach((badge, index) => {
-            setTimeout(() => {
-                badge.style.opacity = '1';
-                badge.style.transform = 'translateY(0)';
-            }, index * 200);
         });
-    }, 500);
-});
-
-// CTA button interaction
-const ctaButton = document.querySelector('.nav-cta');
-if (ctaButton) {
-    ctaButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        // Add ripple effect
-        const ripple = document.createElement('span');
-        ripple.classList.add('ripple');
-        ctaButton.appendChild(ripple);
         
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
-        
-        // Scroll to contact or show modal
-        console.log('Start a project clicked');
-    });
-}
-
-// Add ripple effect CSS dynamically
-const style = document.createElement('style');
-style.textContent = `
-    .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.6);
-        transform: scale(0);
-        animation: ripple-animation 0.6s linear;
-        pointer-events: none;
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenuToggle.contains(event.target) && !navList.contains(event.target)) {
+                mobileMenuToggle.classList.remove('active');
+                navList.classList.remove('active');
+            }
+        });
     }
     
-    @keyframes ripple-animation {
-        to {
-            transform: scale(4);
-            opacity: 0;
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 767) {
+            mobileMenuToggle?.classList.remove('active');
+            navList?.classList.remove('active');
         }
-    }
-`;
-document.head.appendChild(style);
-
-// Initialize all functionality
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('INTEGNITY website loaded successfully!');
-    
-    // Set initial states
-    document.querySelectorAll('.badge').forEach(badge => {
-        badge.style.opacity = '0';
-        badge.style.transform = 'translateY(20px)';
-        badge.style.transition = 'all 0.6s ease';
     });
     
-    // Add ready class after short delay
+    // Smooth scrolling for navigation links (if needed for future sections)
+    const navLinks = document.querySelectorAll('.nav-list > div');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Add smooth scrolling logic here if you have multiple sections
+            console.log('Navigation clicked:', this.textContent.trim());
+        });
+    });
+    
+    // CTA Button interaction
+    const ctaButton = document.querySelector('.base');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Start a project clicked');
+            // Add your project start logic here
+        });
+    }
+    
+    // Keyboard navigation support
+    document.addEventListener('keydown', function(e) {
+        // ESC key closes mobile menu
+        if (e.key === 'Escape') {
+            mobileMenuToggle?.classList.remove('active');
+            navList?.classList.remove('active');
+        }
+        
+        // Enter key on focusable elements
+        if (e.key === 'Enter') {
+            const focusedElement = document.activeElement;
+            if (focusedElement.classList.contains('base') || 
+                focusedElement.closest('.nav-list > div')) {
+                focusedElement.click();
+            }
+        }
+    });
+    
+    // Add loading state handling for SVG
+    const integnityLogo = document.querySelector('.integnity2');
+    if (integnityLogo) {
+        integnityLogo.addEventListener('load', function() {
+            this.classList.remove('loading');
+        });
+        
+        integnityLogo.addEventListener('error', function() {
+            console.warn('INTEGNITY logo failed to load');
+            // Fallback to text if SVG fails to load
+            this.style.display = 'none';
+            const fallbackText = document.createElement('div');
+            fallbackText.textContent = 'INTEGNITY';
+            fallbackText.style.cssText = `
+                color: white;
+                font-size: clamp(4rem, 12vw, 12rem);
+                font-weight: 900;
+                letter-spacing: 8px;
+                text-align: center;
+                text-transform: uppercase;
+            `;
+            this.parentNode.appendChild(fallbackText);
+        });
+    }
+    
+    // Performance optimization: Debounce resize events
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            // Handle any resize-specific logic here
+            console.log('Window resized to:', window.innerWidth, 'x', window.innerHeight);
+        }, 250);
+    });
+    
+    // Add touch gesture support for mobile
+    let touchStartX = 0;
+    let touchStartY = 0;
+    
+    document.addEventListener('touchstart', function(e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    document.addEventListener('touchend', function(e) {
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+        
+        // Swipe detection (for future use)
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+            if (deltaX > 0) {
+                console.log('Swipe right detected');
+            } else {
+                console.log('Swipe left detected');
+            }
+        }
+    }, { passive: true });
+    
+    // Initialize page
+    console.log('INTEGNITY website initialized successfully');
+    
+    // Add ready class to body after initialization
     setTimeout(() => {
         document.body.classList.add('ready');
     }, 100);
 });
-
-// Error handling
-window.addEventListener('error', (e) => {
-    console.error('JavaScript error:', e.error);
-});
-
-// Accessibility improvements
-document.addEventListener('focus', (e) => {
-    if (e.target.matches('.nav-link, .nav-cta, .badge')) {
-        e.target.style.outline = '2px solid rgba(255, 255, 255, 0.8)';
-        e.target.style.outlineOffset = '2px';
-    }
-}, true);
-
-document.addEventListener('blur', (e) => {
-    if (e.target.matches('.nav-link, .nav-cta, .badge')) {
-        e.target.style.outline = '';
-        e.target.style.outlineOffset = '';
-    }
-}, true);
 

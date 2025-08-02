@@ -1,76 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./vars.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+      a,
+      button,
+      input,
+      select,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: none;
+        text-decoration: none;
+        background: none;
+
+        -webkit-font-smoothing: antialiased;
+      }
+
+      menu,
+      ol,
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
     <title>INTEGNITY - Strategy-First Influencer Agency</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>INTEGNITY</h2>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">HOME</a>
-                <a href="#about" class="nav-link">ABOUT</a>
-                <a href="#work" class="nav-link">WORK</a>
-                <a href="#insights" class="nav-link">INSIGHTS</a>
-                <a href="#services" class="nav-link">SERVICES</a>
-                <a href="#contact" class="nav-link">CONTACT</a>
-                <a href="#project" class="nav-cta">START A PROJECT →</a>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+  </head>
+  <body>
+    <div
+      class="hero-area-01"
+      style="
+        background: url(hero-area-01.png) center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      "
+    >
+      <div class="navbar-01">
+        <div class="nav-brand">
+          <div class="brand-holder">
+            <div class="integnity">INTEGNITY</div>
+          </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-background">
-            <div class="statue-figure"></div>
-            <div class="light-effects"></div>
+        <div class="nav-list">
+          <div class="home">
+            <div class="home2">HOME</div>
+            <div class="shape"></div>
+          </div>
+          <div class="about">
+            <div class="about2">ABOUT</div>
+          </div>
+          <div class="work">
+            <div class="work2">WORK</div>
+          </div>
+          <div class="insights">
+            <div class="insights2">INSIGHTS</div>
+          </div>
+          <div class="services">
+            <div class="services2">SERVICES</div>
+          </div>
+          <div class="contact">
+            <div class="contact2">CONTACT</div>
+          </div>
         </div>
-        
-        <div class="hero-content">
-            <!-- Top badges -->
-            <div class="hero-badges">
-                <div class="badge left-badge">
-                    <span>STRATEGY-FIRST</span>
-                    <span>INFLUENCER AGENCY</span>
-                </div>
-                <div class="badge center-badge">
-                    <span>INDEPENDENT</span>
-                    <span>SINCE 2013</span>
-                </div>
-                <div class="badge right-badge">
-                    <span>#1 RANKED</span>
-                    <span>EMERGE100</span>
-                </div>
+        <div class="nav-cta-btn">
+          <div class="cta">
+            <div class="base">
+              <div class="start-a-project">START A PROJECT</div>
+              <img class="arrow-1" src="arrow-10.svg" />
             </div>
-            
-            <!-- Main title -->
-            <div class="hero-title">
-                <h1>INTEGNITY</h1>
-            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Additional sections can be added here -->
-    <section class="content-section">
-        <div class="container">
-            <h2>Welcome to INTEGNITY</h2>
-            <p>Strategy-first influencer marketing agency delivering measurable results since 2013.</p>
+        <!-- Mobile menu toggle -->
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-    </section>
-
+      </div>
+      <div class="hero-content">
+        <div class="hero-content-subtxt">
+          <div class="strategy-first-influencer-agency">
+            Strategy-first
+            <br />
+            Influencer Agency
+          </div>
+          <div class="independent-since-2013">
+            independent
+            <br />
+            since 2013
+          </div>
+          <div class="_1-ranked-emerce-100">
+            #1 Ranked
+            <br />
+            Emerce100
+          </div>
+        </div>
+        <div class="hero-content-txt">
+          <img class="integnity2" src="integnity1.svg" />
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
 
