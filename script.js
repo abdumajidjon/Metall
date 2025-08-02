@@ -24,6 +24,7 @@ function initializeApp() {
     initializeScrollEffects();
     initializeAnimations();
     initializeInteractions();
+    initializeCustomCursor(); // Add custom cursor
     initializePerformanceOptimizations();
     
     console.log('✅ INTEGNITY - Initialization complete');
@@ -729,5 +730,93 @@ if ('performance' in window) {
         }, 0);
     });
 }
+
+// Custom Cursor Implementation
+function initializeCustomCursor() {
+    // Only initialize on desktop
+    if (window.innerWidth <= 768) return;
+    
+    const cursor = document.getElementById('customCursor');
+    const cursorDot = cursor.querySelector('.cursor-dot');
+    const cursorOutline = cursor.querySelector('.cursor-outline');
+    const navbar = document.querySelector('.navbar');
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+    
+    // Mouse move handler
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Check if mouse is over navbar
+        const navbarRect = navbar.getBoundingClientRect();
+        const isOverNavbar = (
+            mouseX >= navbarRect.left &&
+            mouseX <= navbarRect.right &&
+            mouseY >= navbarRect.top &&
+            mouseY <= navbarRect.bottom
+        );
+        
+        if (isOverNavbar) {
+            cursor.classList.add('active');
+        } else {
+            cursor.classList.remove('active');
+        }
+    });
+    
+    // Smooth cursor animation
+    function animateCursor() {
+        // Smooth follow animation
+        cursorX += (mouseX - cursorX) * 0.1;
+        cursorY += (mouseY - cursorY) * 0.1;
+        
+        cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+        
+        requestAnimationFrame(animateCursor);
+    }
+    
+    // Start animation
+    animateCursor();
+    
+    // Navbar hover effects
+    const navbarLinks = navbar.querySelectorAll('a, button');
+    
+    navbarLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            cursor.classList.add('hover');
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            cursor.classList.remove('hover');
+        });
+    });
+    
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', function() {
+        cursor.classList.remove('active');
+    });
+    
+    // Show cursor when entering window
+    document.addEventListener('mouseenter', function() {
+        const navbarRect = navbar.getBoundingClientRect();
+        const isOverNavbar = (
+            mouseX >= navbarRect.left &&
+            mouseX <= navbarRect.right &&
+            mouseY >= navbarRect.top &&
+            mouseY <= navbarRect.bottom
+        );
+        
+        if (isOverNavbar) {
+            cursor.classList.add('active');
+        }
+    });
+    
+    console.log('✨ Custom cursor initialized');
+}
+
+// Custom cursor added to main initialization function above
 
 console.log('🎯 INTEGNITY - Script loaded successfully');

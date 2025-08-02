@@ -759,4 +759,75 @@ body {
     }
 }
 
+/* Custom Cursor */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.custom-cursor.active {
+    opacity: 1;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-white);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.15s ease;
+    opacity: 0.5;
+}
+
+/* Cursor hover states */
+.custom-cursor.hover .cursor-outline {
+    width: 60px;
+    height: 60px;
+    opacity: 0.8;
+    border-color: var(--color-white);
+}
+
+.custom-cursor.hover .cursor-dot {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Hide default cursor on navbar */
+.navbar,
+.navbar * {
+    cursor: none !important;
+}
+
+/* Show default cursor on mobile */
+@media (max-width: 768px) {
+    .custom-cursor {
+        display: none !important;
+    }
+    
+    .navbar,
+    .navbar * {
+        cursor: auto !important;
+    }
+}
+
 /* End of CSS */
