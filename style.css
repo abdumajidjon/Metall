@@ -1,5 +1,5 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* Import Google Fonts - Plus Jakarta Sans */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
 
 /* Base Styles */
 body {
@@ -31,7 +31,7 @@ body {
   z-index: var(--z-fixed);
 }
 
-/* Brand */
+/* Brand - Figma Specifications */
 .nav-brand {
   flex-shrink: 0;
 }
@@ -43,13 +43,15 @@ body {
 
 .integnity {
   color: var(--text-white);
-  font-size: var(--fs-3xl);
+  font-size: var(--fs-brand);
+  font-family: var(--font-family);
   font-weight: var(--font-weight-extrabold);
-  letter-spacing: 2px;
+  word-wrap: break-word;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-/* Navigation List */
+/* Navigation List - Figma Specifications */
 .nav-list {
   display: flex;
   align-items: center;
@@ -70,12 +72,14 @@ body {
 .insights2,
 .services2,
 .contact2 {
-  color: var(--text-white-80);
-  font-size: var(--fs-base);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: 1px;
+  color: var(--text-white);
+  font-size: var(--fs-nav);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-extrabold);
+  word-wrap: break-word;
   text-transform: uppercase;
   transition: var(--transition-normal);
+  letter-spacing: 0.5px;
 }
 
 .nav-list > div:hover .home2,
@@ -84,7 +88,7 @@ body {
 .nav-list > div:hover .insights2,
 .nav-list > div:hover .services2,
 .nav-list > div:hover .contact2 {
-  color: var(--text-white);
+  opacity: 0.8;
   transform: translateY(-1px);
 }
 
@@ -100,7 +104,7 @@ body {
   border-radius: var(--radius-full);
 }
 
-/* CTA Button */
+/* CTA Button - Figma Specifications */
 .nav-cta-btn {
   flex-shrink: 0;
 }
@@ -130,11 +134,13 @@ body {
 
 .start-a-project {
   color: var(--text-white);
-  font-size: var(--fs-base);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 1px;
+  font-size: var(--fs-cta);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-extrabold);
+  word-wrap: break-word;
   text-transform: uppercase;
   transition: var(--transition-normal);
+  letter-spacing: 0.5px;
 }
 
 .base:hover .start-a-project {
@@ -209,7 +215,9 @@ body {
   padding: var(--space-4) var(--space-5);
   color: var(--text-white);
   font-size: var(--fs-sm);
-  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-extrabold);
+  word-wrap: break-word;
   letter-spacing: 1px;
   text-transform: uppercase;
   line-height: 1.4;
@@ -293,8 +301,22 @@ body {
     margin-bottom: var(--space-16);
   }
   
+  /* Responsive font sizes for tablet */
   .integnity {
-    font-size: var(--fs-2xl);
+    font-size: 28px;
+  }
+  
+  .start-a-project {
+    font-size: 18px;
+  }
+  
+  .home2,
+  .about2,
+  .work2,
+  .insights2,
+  .services2,
+  .contact2 {
+    font-size: 15px;
   }
   
   .strategy-first-influencer-agency,
@@ -342,14 +364,15 @@ body {
     display: flex;
   }
   
-  /* Mobile navigation items */
+  /* Mobile navigation items - maintain Figma font weight */
   .home2,
   .about2,
   .work2,
   .insights2,
   .services2,
   .contact2 {
-    font-size: var(--fs-lg);
+    font-size: var(--fs-nav-mobile);
+    font-weight: var(--font-weight-extrabold);
     padding: var(--space-4);
   }
   
@@ -365,7 +388,14 @@ body {
   }
   
   .start-a-project {
-    font-size: var(--fs-sm);
+    font-size: var(--fs-cta-mobile);
+    font-weight: var(--font-weight-extrabold);
+  }
+  
+  /* Mobile brand */
+  .integnity {
+    font-size: var(--fs-brand-mobile);
+    font-weight: var(--font-weight-extrabold);
   }
   
   /* Mobile hero content */
@@ -380,13 +410,10 @@ body {
   .independent-since-2013,
   ._1-ranked-emerce-100 {
     font-size: var(--fs-xs);
+    font-weight: var(--font-weight-extrabold);
     padding: var(--space-3) var(--space-4);
     text-align: center;
     min-width: 200px;
-  }
-  
-  .integnity {
-    font-size: var(--fs-xl);
   }
 }
 
@@ -401,7 +428,8 @@ body {
   }
   
   .integnity {
-    font-size: var(--fs-lg);
+    font-size: clamp(20px, 5vw, 28px);
+    font-weight: var(--font-weight-extrabold);
     letter-spacing: 1px;
   }
   
@@ -414,13 +442,25 @@ body {
   }
   
   .start-a-project {
-    font-size: var(--fs-xs);
+    font-size: clamp(14px, 3.5vw, 18px);
+    font-weight: var(--font-weight-extrabold);
+  }
+  
+  .home2,
+  .about2,
+  .work2,
+  .insights2,
+  .services2,
+  .contact2 {
+    font-size: clamp(13px, 3vw, 15px);
+    font-weight: var(--font-weight-extrabold);
   }
   
   .strategy-first-influencer-agency,
   .independent-since-2013,
   ._1-ranked-emerce-100 {
     font-size: 9px;
+    font-weight: var(--font-weight-extrabold);
     padding: var(--space-2) var(--space-3);
     min-width: 180px;
   }
@@ -441,19 +481,32 @@ body {
   }
   
   .integnity {
-    font-size: var(--fs-base);
+    font-size: clamp(18px, 4.5vw, 24px);
+    font-weight: var(--font-weight-extrabold);
+  }
+  
+  .start-a-project {
+    font-size: clamp(12px, 3vw, 16px);
+    font-weight: var(--font-weight-extrabold);
+  }
+  
+  .home2,
+  .about2,
+  .work2,
+  .insights2,
+  .services2,
+  .contact2 {
+    font-size: clamp(12px, 2.8vw, 14px);
+    font-weight: var(--font-weight-extrabold);
   }
   
   .strategy-first-influencer-agency,
   .independent-since-2013,
   ._1-ranked-emerce-100 {
     font-size: 8px;
+    font-weight: var(--font-weight-extrabold);
     padding: var(--space-2);
     min-width: 160px;
-  }
-  
-  .start-a-project {
-    font-size: 9px;
   }
   
   .mobile-menu-toggle span {
@@ -485,6 +538,7 @@ body {
   ._1-ranked-emerce-100 {
     min-width: auto;
     padding: var(--space-2) var(--space-3);
+    font-weight: var(--font-weight-extrabold);
   }
 }
 
@@ -538,5 +592,17 @@ html {
 
 .integnity2.loading {
   opacity: 0.5;
+}
+
+/* Font Loading Optimization */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-display: swap;
+}
+
+/* Ensure consistent font rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
