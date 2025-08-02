@@ -47,8 +47,8 @@
     --z-background: 1;
     --z-statue: 2;
     --z-overlay: 3;
-    --z-content: 4;
-    --z-navigation: 5;
+    --z-content: 10; /* Content yuqorida bo'lishi uchun oshirildi */
+    --z-navigation: 15;
     --z-loading: 100;
 }
 
@@ -328,6 +328,8 @@ body {
     flex-wrap: wrap;
     gap: 1.5rem;
     margin-bottom: var(--spacing-xxl);
+    position: relative;
+    z-index: var(--z-content); /* Statue'dan yuqorida bo'lishi uchun */
 }
 
 .hero-badge {
@@ -380,6 +382,7 @@ body {
 /* Hero Title */
 .hero-title-container {
     position: relative;
+    z-index: var(--z-content); /* Statue'dan yuqorida bo'lishi uchun */
 }
 
 .hero-title {
