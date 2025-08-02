@@ -188,9 +188,7 @@ body {
     padding-bottom: 1rem !important;
 }
 
-.navbar-brand-wrapper {
-    order: 1;
-}
+/* Brand wrapper olib tashlandi - endi to'g'ridan-to'g'ri navbar-brand ishlatiladi */
 
 .integnity-brand {
     color: var(--color-white) !important;
@@ -690,4 +688,3 @@ body {
         display: none !important;
     }
 }
-
