@@ -1,118 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./vars.css" />
-    <link rel="stylesheet" href="./style.css" />
-
-    <style>
-      a,
-      button,
-      input,
-      select,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        border: none;
-        text-decoration: none;
-        background: none;
-
-        -webkit-font-smoothing: antialiased;
-      }
-
-      menu,
-      ol,
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INTEGNITY - Strategy-First Influencer Agency</title>
-  </head>
-  <body>
-    <div
-      class="hero-area-01"
-      style="
-        background: url(hero-area-01.png) center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      "
-    >
-      <div class="navbar-01">
-        <div class="nav-brand">
-          <div class="brand-holder">
-            <div class="integnity">INTEGNITY</div>
-          </div>
-        </div>
-        <div class="nav-list">
-          <div class="home">
-            <div class="home2">HOME</div>
-            <div class="shape"></div>
-          </div>
-          <div class="about">
-            <div class="about2">ABOUT</div>
-          </div>
-          <div class="work">
-            <div class="work2">WORK</div>
-          </div>
-          <div class="insights">
-            <div class="insights2">INSIGHTS</div>
-          </div>
-          <div class="services">
-            <div class="services2">SERVICES</div>
-          </div>
-          <div class="contact">
-            <div class="contact2">CONTACT</div>
-          </div>
-        </div>
-        <div class="nav-cta-btn">
-          <div class="cta">
-            <div class="base">
-              <div class="start-a-project">START A PROJECT</div>
-              <img class="arrow-1" src="arrow-10.svg" />
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts - Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container-fluid px-0">
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-dark py-4">
+                <div class="container-fluid px-5">
+                    <!-- Brand -->
+                    <div class="navbar-brand-wrapper">
+                        <a class="navbar-brand integnity-brand" href="#">INTEGNITY</a>
+                    </div>
+                    
+                    <!-- Mobile Toggle -->
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <!-- Navigation Menu -->
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav nav-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">
+                                    <span>HOME</span>
+                                    <div class="nav-indicator"></div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">ABOUT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">WORK</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">INSIGHTS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">SERVICES</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">CONTACT</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <div class="navbar-cta d-none d-lg-block">
+                        <button class="btn btn-cta">START A PROJECT</button>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <div class="container-fluid px-5">
+                    <!-- Hero Badges -->
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-12">
+                            <div class="hero-badges d-flex justify-content-center flex-wrap gap-4">
+                                <div class="hero-badge">
+                                    <span>Strategy-first<br>Influencer Agency</span>
+                                </div>
+                                <div class="hero-badge">
+                                    <span>independent<br>since 2013</span>
+                                </div>
+                                <div class="hero-badge">
+                                    <span>#1 Ranked<br>Emerce100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hero Title -->
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="hero-title-wrapper">
+                                <div class="hero-title-bg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <!-- Mobile menu toggle -->
-        <div class="mobile-menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-      <div class="hero-content">
-        <div class="hero-content-subtxt">
-          <div class="strategy-first-influencer-agency">
-            Strategy-first
-            <br />
-            Influencer Agency
-          </div>
-          <div class="independent-since-2013">
-            independent
-            <br />
-            since 2013
-          </div>
-          <div class="_1-ranked-emerce-100">
-            #1 Ranked
-            <br />
-            Emerce100
-          </div>
-        </div>
-        <div class="hero-content-txt">
-          <img class="integnity2" src="integnity1.svg" />
-        </div>
-      </div>
     </div>
+    
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
 
