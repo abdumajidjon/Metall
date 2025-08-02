@@ -270,7 +270,7 @@ body {
 
 /* CTA Button */
 .navbar-cta {
-    order: 3;
+    margin-left: auto;
 }
 
 .btn-cta {
@@ -293,12 +293,13 @@ body {
 
 .btn-cta:hover {
     background: var(--color-white) !important;
-    color: var(--color-dark) !important;
+    color: var(--color-primary) !important;
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .cta-arrow {
+    font-size: 0.875rem;
     transition: transform var(--transition-normal);
 }
 
